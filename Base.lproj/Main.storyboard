@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OnYourMark" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jf-XM-mtH">
+                                <state key="normal" title="GO" image="stopWatchStartStopButton.png"/>
+                                <connections>
+                                    <action selector="goButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L3I-Hg-GUa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZz-d0-gLs" userLabel="Stop Button">
+                                <state key="normal" title="STOP" image="stopWatchStartStopButton.png"/>
+                                <connections>
+                                    <action selector="cancelTimerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RYD-qp-BQM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ON YOUR MARK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-8q-HUx">
+                                <frame key="frameInset" width="375" height="39"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="45"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iab-7W-TCf">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="W5d-jJ-AA6"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zbk-jJ-a90"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopWatch.png" translatesAutoresizingMaskIntoConstraints="NO" id="1IF-MP-u0T">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBG-zz-rnY">
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.29803921570000003" green="0.7725490196" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wvv-8q-HUx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="0hx-Pw-EFj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VZz-d0-gLs" secondAttribute="trailing" constant="235" id="1l8-ku-qS5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wvv-8q-HUx" secondAttribute="bottom" constant="628" id="DKP-jn-Hks"/>
+                            <constraint firstItem="pBG-zz-rnY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="219" id="F4b-4B-Ifn"/>
+                            <constraint firstItem="3Jf-XM-mtH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="240" id="JuU-ra-b50"/>
+                            <constraint firstItem="pBG-zz-rnY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="77" id="KIc-dH-GyN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Jf-XM-mtH" secondAttribute="trailing" constant="68" id="LzO-VE-XoM"/>
+                            <constraint firstItem="1IF-MP-u0T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="53" id="O9V-Sk-cZh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pBG-zz-rnY" secondAttribute="trailing" constant="75" id="P2B-7S-TNQ"/>
+                            <constraint firstItem="VZz-d0-gLs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="73" id="PvX-UK-Fyr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wvv-8q-HUx" secondAttribute="trailing" constant="-16" id="SKB-Du-NuU"/>
+                            <constraint firstItem="Iab-7W-TCf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2" id="W0K-X7-Peg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Iab-7W-TCf" secondAttribute="trailing" constant="2" id="XFU-dT-Jl8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Iab-7W-TCf" secondAttribute="bottom" constant="35" id="ZJm-jC-oSz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1IF-MP-u0T" secondAttribute="trailing" constant="51" id="bxF-98-E6N"/>
+                            <constraint firstItem="1IF-MP-u0T" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="99" id="egg-X9-aIa"/>
+                            <constraint firstItem="pBG-zz-rnY" firstAttribute="centerY" secondItem="1IF-MP-u0T" secondAttribute="centerY" id="f1w-pr-UGG"/>
+                            <constraint firstItem="3Jf-XM-mtH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="101" id="fmh-lJ-OoA"/>
+                            <constraint firstItem="pBG-zz-rnY" firstAttribute="centerX" secondItem="1IF-MP-u0T" secondAttribute="centerX" id="snF-1t-veb"/>
+                            <constraint firstItem="Iab-7W-TCf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="429" id="vYK-A0-w9Q"/>
+                            <constraint firstItem="VZz-d0-gLs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="101" id="viY-ae-cdq"/>
+                            <constraint firstItem="wvv-8q-HUx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xfW-sB-xAc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goButton" destination="3Jf-XM-mtH" id="jha-4w-Q9m"/>
+                        <outlet property="timerDisplayLabel" destination="pBG-zz-rnY" id="jfy-R9-kSO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="239.19999999999999" y="375.56221889055473"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="stopWatch.png" width="239" height="300"/>
+        <image name="stopWatchStartStopButton.png" width="35" height="76"/>
+    </resources>
+</document>
